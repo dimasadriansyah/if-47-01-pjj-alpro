@@ -1,0 +1,160 @@
+================= persamaan ================
+function f(x, y: integer) -> real
+algoritma
+  return (1.0) / (3.0 * real(x^2) + 10.0) + (10.0 * real(y)) + (7.0)
+endFunction
+
+program persamaan
+kamus
+  x, y: integer
+  nilai: real
+algoritma
+  input(x, y)
+  nilai <- f(x, y)
+  output(nilai)
+endProgram
+==============================================
+
+
+
+================= akar pangkat dari bil tertentu ====================
+function akar(x, y: integer) -> bool
+kamus
+  hasilKali, i: integer
+  result: bool
+algoritma
+  hasilKali <- 1
+  for i <- 1 to 3 do
+    hasilKali <- *  x
+  endFor
+  result <- hasilKali == y
+  return result
+endFunction
+
+program akarPangkat
+kamus
+  x, y: integer
+  hasil: bool
+algoritma
+  input(x, y)
+  hasil <- akar(x, y)
+  output(hasil)
+endProgram
+================================================================
+
+
+
+================== print string =============================
+function stringLoop(x: integer, y: string)
+kamus
+  i: integer
+algoritma
+  for i <- 1 to x do
+    println(y)
+  endFor
+endFunction
+
+program stringLooping
+kamus
+  x: integer
+  y: string
+algoritma
+  input(x)
+  input(y)
+  output(stringLoop(x, y))
+endProgram
+================================================
+
+
+====================== isi tangki ============================
+function tangki(t: integer) -> boolean
+kamus
+  isiTangki, v: integer
+  result: boolean
+algoritma
+  isiTangki <- 0
+  while isiTangki <= t do
+    input(v)
+    isiTangki <- isiTangki + v
+    result <- isiTangki >= t
+    output(result)
+  endWhile
+
+  return result
+endFunction
+
+program mengisiTangki
+kamus
+  t: integer
+algoritma
+  input(t)
+  output(tangki(t))
+endProgram
+=================================================
+
+
+
+
+=================== menghitung berat ====================
+function menghitung(berat: integer)
+kamus
+  kg, gr, hargaKg, hargaGr: integer
+algoritma
+  kg <- 0
+  gr <- 0
+
+  while berat >= 1000 do
+    berat <- berat - 1000
+    kg <- kg + 1
+  endWhile
+
+  hargaKg <- kg * 10000
+
+  gr <- gr + berat
+
+  if gr >= 500 and kg < 10 then
+    hargaGr <- gr * 5
+  else gr < 500 and kg < 10 then
+    hargaGr <- gr * 15
+  endIf
+
+  output(kg, "kg", "+", gr, "gr")
+  output("Rp.", hargaKg, "+", "Rp.", hargaGr, "= Rp.", hargaKg+hargaGr)
+endFunction
+
+program hargaBeratBarang
+kamus
+  berat: integer
+algoritma
+  input(berat)
+  output(menghitung(berat))
+endProgram
+====================================================
+
+
+
+
+================= menghitung kpk =====================
+function findKpk(n, m: integer) -> integer
+kamus
+  kpk: integer
+algoritma
+  kpk <- n
+
+  while kpk mod m != 0 do
+    kpk <- + n 
+  endWhile
+
+  return kpk
+endFunction
+
+program menghitungKpk
+kamus
+  n, m, result: integer
+algoritma
+  input(n, m)
+
+  result <- findKpk(n, m)
+  output(result)
+endProgram
+======================================================
