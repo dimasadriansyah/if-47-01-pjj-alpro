@@ -1,0 +1,112 @@
+===== mengurutkan ======
+procedure mengurutkan(in/out x, y: integer)
+algoritma
+  if x < y then
+    output(x, y)
+else if y < x
+    output(y, x)
+endIf
+endProcedure
+
+program mengurutkanNomor
+kamus
+    x, y: integer
+algoritma
+    x <- 0
+    y <- 1
+
+    for x not equal y do
+        input(x, y)
+        mengurutkan(x, y)
+    endFor
+endProgram
+========================
+
+====temperatur====
+procedure temperatur(in/out x: real)
+kamus
+    r, f, k: real
+algoritma
+    r <- x * 0.8
+    f <- (x * 9 / 5) + 32
+    k <- x + 273.15
+
+    output(r,"R", f,"F", k,"K")
+endProcedure
+
+program temperatur
+kamus
+    c: real
+algoritma
+    input(c)
+    temperatur(c)
+endProgram
+==================
+
+========zoom=========
+procedure zoomIn(in/out x,y,z: integer, in/out s: string)
+algoritma
+    x <- x * z
+    y <- y * z
+    output(x, y)
+endProcedure
+
+procedure zoomOut(in/out x,y,z: integer, in/out s: string)
+algoritma
+    x <- x div z
+    y <- y div z
+    output(x, y)
+endProcedure
+
+program zoom
+kamus
+    x, y, z: integer
+    s: string
+algoritma
+    input(x, y)
+    input(s, z)
+
+    if s == "+" then
+        zoomIn(x, y, z, s)
+    else if s == "-" then
+        zoomOut(x, y, z, s)
+    endIf
+endProgram
+=====================
+
+
+=======denom========
+procedure denominasi(in money: integer, in/out k10, k2, k1: integer)
+algoritma
+    if money >= 10_000 then
+        k10 <- money div 10_000
+        money <- money mod 10_000
+    else
+        k10 <- 0
+    endIf
+
+    if money >= 2000 then
+        k2 <- money div 2000
+        money <- money mod 2000
+    else
+        k2 <- 0
+    endIf
+
+    if money >= 1000 then
+        k1 <- money div 1000
+        money <- money mod 1000
+    endIf
+endProcedure
+
+program denom
+kamus
+    InMoney, k10, k2, k1: integer
+algoritma
+    input(InMoney)
+    denominasi(InMoney, k10, k2, k1)
+
+    output(k10, "lembar 10000")
+    output(k2, "lembar 2000")
+    output(k1, "lembar 1000")
+endProgram
+====================
